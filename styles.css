@@ -1,0 +1,270 @@
+/* Resetando margens e padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Configurações de fontes e cores */
+body {
+  font-family: 'Helvetica', sans-serif;
+  background-color: #F5F5DC;
+  color: #964B00;
+}
+
+/* Side Bar */
+.side-bar {
+  width: 0; /* Inicialmente escondido */
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #964B00; /* Cor do fundo do Side Bar */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  overflow-x: hidden;
+  transition: width 0.5s ease; /* Transição suave para abertura e fechamento */
+}
+
+/* Quando o Side Bar for aberto */
+.side-bar.open {
+  width: 230px; /* Largura do Side Bar quando aberto */
+}
+
+.side-bar .logo img {
+  width: 100px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.side-bar ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+.side-bar ul li {
+  margin: 15px 0;
+}
+
+.side-bar ul li a {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.side-bar ul li a:hover {
+  transform: scale(1.1);
+  color: #ac631b; /* Cor quando o item é hover */
+}
+
+/* Main Content */
+.main-content {
+  margin-left: 0; /* Alterado para não interferir no conteúdo */
+  padding: 20px;
+  transition: margin-left 0.5s ease;
+}
+
+
+
+section {
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+  font-style: italic;
+  color: #964B00;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.campus {
+  color: white;
+}
+
+.campus-profissional {
+  color: #964B00;
+}
+
+/* Galeria Section */
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.gallery img {
+  width: 200px; /* Reduzindo o tamanho das imagens */
+  height: 200px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Logo fixa no topo */
+.logo {
+  position: fixed; /* Fixa a logo no topo */
+  top: 20px;
+  left: 20px;
+  z-index: 100; /* Garante que a logo fique sobre o side bar */
+  cursor: pointer;
+}
+
+/* Ajusta a posição do conteúdo principal quando o side bar for aberto */
+.side-bar.open + .main-content {
+  margin-left: 250px; /* Empurra o conteúdo principal quando o side bar abrir */
+}
+
+/* Compra Section */
+#compra {
+  position: relative;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.buy-now {
+  background-color: #964B00;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 10px; /* Espaço entre o dedo e o botão */
+}
+
+/* Ajuste do GIF */
+.gif-pointer {
+  width: 70px; /* Tamanho do dedo */
+  position: absolute;
+  top: -60px; /* Ajusta a posição para que fique acima do botão */
+  left: 50%; /* Centraliza horizontalmente */
+  transform: translateX(-50%); /* Alinha o GIF ao centro */
+  vertical-align: middle; /* Alinha verticalmente o GIF com o texto */
+}
+
+/* Contato Section */
+#home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+#home h1 {
+  font-size: 2.5rem;
+  color: #964B00; /* Cor do título */
+}
+
+.campus {
+  color: #F5F5DC; /* Cor para 'Tênis' */
+}
+
+.campus-profissional {
+  color: #964B00; /* Cor para 'Campus Profissional' */
+}
+
+#home img {
+  max-width: 80%;  /* Faz a imagem não ficar muito grande */
+  width: 400px;    /* Define uma largura fixa para a imagem */
+  height: auto;    /* Ajusta a altura automaticamente */
+  margin: 20px 0;  /* Adiciona um pouco de espaço em volta da imagem */
+}
+
+/* Seção Contato */
+#contato {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+#contato h2 {
+  font-size: 2rem;
+  color: #964B00;
+  margin-bottom: 20px;
+}
+
+#contato form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 500px;  /* Limita a largura do formulário */
+}
+
+#contato input,
+#contato textarea {
+  padding: 15px;
+  margin: 10px 0;
+  border: 2px solid #964B00;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+#contato button {
+  padding: 15px;
+  background-color: #964B00;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#contato button:hover {
+  background-color: #ac631b;  /* Cor quando passar o mouse */
+}

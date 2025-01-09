@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tênis Campus Profissional - Adidas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Helvetica:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <!-- Barra de Navegação (Side Bar) -->
+  <div class="side-bar" id="sideBar">
+    <div class="logo" onclick="toggleSideBar()">
+      <img src="adidas-logo.png" alt="Adidas Logo">
+    </div>
+    <br><br>
+    <br><br>
+    <ul>
+      <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="#sobre"><i class="fas fa-info-circle"></i> Sobre</a></li>
+      <li><a href="#galeria"><i class="fas fa-images"></i> Galeria</a></li>
+      <li><a href="#depoimentos"><i class="fas fa-comments"></i> Depoimentos</a></li>
+      <li><a href="#compra"><i class="fas fa-shopping-cart"></i> Compra</a></li>
+      <li><a href="#contato"><i class="fas fa-phone-alt"></i> Contato</a></li>
+    </ul>
+  </div>
+
+  <!-- Conteúdo Principal -->
+  <div class="main-content">
+    <section id="home">
+      <h1><span class="campus">Tênis</span> <span class="campus-profissional">Campus Profissional</span></h1>
+      <img src="campus.png" alt="Tênis Campus Profissional">
+    </section>
+
+    <section id="galeria">
+      <div class="gallery">
+        <img class="zoomable" src="foto1.jpg" alt="Imagem do Tênis" onclick="openImage(this)">
+        <img class="zoomable" src="foto2.jpg" alt="Imagem do Tênis" onclick="openImage(this)">
+      </div>
+    </section>
+
+    <section id="compra">
+      <img src="dedo-apontando.gif" alt="Dedo Apontando" class="gif-pointer">
+      <a href="https://www.adidas.com.br/" class="buy-now">Comprar</a>
+    </section>
+
+    <section id="contato">
+      <h2>Entre em Contato</h2>
+      <form>
+        <input type="text" placeholder="Nome" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </div>
+
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeImage()">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script>
+    // Função para alternar a visibilidade do Side Bar
+    function toggleSideBar() {
+      var sideBar = document.getElementById("sideBar");
+      sideBar.classList.toggle("open");
+    }
+
+    function openImage(img) {
+      var modal = document.getElementById("imageModal");
+      var modalImg = document.getElementById("modalImage");
+      modal.style.display = "block";
+      modalImg.src = img.src;
+    }
+
+    function closeImage() {
+      var modal = document.getElementById("imageModal");
+      modal.style.display = "none";
+    }
+  </script>
+</body>
+</html>
